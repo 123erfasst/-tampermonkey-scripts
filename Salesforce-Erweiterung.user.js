@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SalesForce-Erweiterungen
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      1.0
 // @description  try to take over the world!
 // @author       ThomasTebbe, cedteg
 // @updateURL    https://github.com/123erfasst/tampermonkey-scripts/raw/master/Salesforce-Erweiterung.user.js
