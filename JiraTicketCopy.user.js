@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         JiraTicketCopy
-// @version      0.1
+// @version      1.0
 // @description  kopieren von JiraTickets
 // @author       Richard Pfeifer
 // @updateURL    https://github.com/123erfasst/tampermonkey-scripts/raw/master/JiraTicketCopyt.user.js
