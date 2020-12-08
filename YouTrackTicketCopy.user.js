@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTrackTicketCopy
 // @version      1.0
-// @description  kopieren von JiraTickets
+// @description  kopieren von YouTrackTickets
 // @author       Richard Pfeifer
 // @updateURL    https://github.com/123erfasst/tampermonkey-scripts/raw/master/YouTrackTicketCopy.user.js
 // @downloadURL  https://github.com/123erfasst/tampermonkey-scripts/raw/master/YouTrackTicketCopy.user.js
