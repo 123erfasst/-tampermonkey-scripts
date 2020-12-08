@@ -3,7 +3,7 @@
 // @version      1.0
 // @description  kopieren von JiraTickets
 // @author       Richard Pfeifer
-// @updateURL    https://github.com/123erfasst/tampermonkey-scripts/raw/master/JiraTicketCopyt.user.js
+// @updateURL    https://github.com/123erfasst/tampermonkey-scripts/raw/master/JiraTicketCopy.user.js
 // @downloadURL  https://github.com/123erfasst/tampermonkey-scripts/raw/master/JiraTicketCopy.user.js
 // @include      https://jira.nevaris.com/secure/RapidBoard.jspa?*
 // @grant        GM_setClipboard
