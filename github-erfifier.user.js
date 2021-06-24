@@ -1,9 +1,12 @@
 // ==UserScript==
 // @name         ERFifier
-// @version      1.0
+// @version      0.9
 // @description  Githubs ERFs werden zum Link
 // @match        https://github.com/123erfasst/123erfasst/pull/*
 // @icon         https://www.google.com/s2/favicons?domain=github.com
+// @updateURL    https://github.com/123erfasst/tampermonkey-scripts/raw/master/github-erfifier.user.js
+// @downloadURL  https://github.com/123erfasst/tampermonkey-scripts/raw/master/github-erfifier.user.js
+// @grant        none
 // @author       Sascha Bultmann
 // ==/UserScript==
 (function() {
