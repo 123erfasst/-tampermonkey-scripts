@@ -17,3 +17,4 @@ https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldm
 [Salesforce List Auto Update](https://github.com/123erfasst/tampermonkey-scripts/raw/master/salesfoce-auto-update-list.user.js)
 
 [add Ip to Google Cloudplatform Firewall](https://github.com/123erfasst/tampermonkey-scripts/raw/master/add_ip_to_google_cloudplatform_firewall.js)
+[ERFifier](https://github.com/123erfasst/tampermonkey-scripts/raw/master/github-erfifier.user.js)
