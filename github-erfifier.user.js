@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         ERFifier
-// @version      1.1
+// @version      1.2
 // @description  Githubs ERFs werden zum Link
 // @match        https://github.com/123erfasst/123erfasst/pull/*
 // @match        https://github.com/123erfasst/123quality/pull/*
@@ -25,9 +25,13 @@
     }
     const addLinkToTitle = () => addLinkToElement(getTitleElement())
     const addLinkToComments = () => getCommentElements().forEach(addLinkToElement)
+    const getJenkinsDetailButtons = () => document.querySelectorAll(".status-actions")
+    const addTargetBlankToJenkinsDetailButton = (el) => el.setAttribute('target', '_blank')
+    const addTargetBlankToJenkinsDetailButtons = () => getJenkinsDetailButtons().forEach(addTargetBlankToJenkinsDetailButton)
     const addLinks = () => {
         addLinkToTitle()
         addLinkToComments()
+        addTargetBlankToJenkinsDetailButtons()
     }
     new MutationObserver(addLinks).observe(document.querySelector("body"), { subtree: true, childList: true, characterData: true });
 })();
