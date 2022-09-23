@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         Salesforce List Auto Update with notification
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @updateURL    https://github.com/123erfasst/tampermonkey-scripts/raw/master/salesfoce-auto-update-list-with-notification.user.js
 // @downloadURL  https://github.com/123erfasst/tampermonkey-scripts/raw/master/salesfoce-auto-update-list-with-notification.user.js
 // @description  Automatically update Salesforce lists so tickets are up to date
-// @author       Sven Heidemann
+// @author       Sven Heidemann, Benno Pohl
 // @grant        GM_notification
 // @grant        GM.setValue
 // @grant        GM.getValue
@@ -23,19 +23,14 @@ setTimeout(async () => {
     if (!window.location.href.includes("https://nevaris.lightning.force.com/lightning/o/Case/list")) {
         return;
     }
-    GM.setValue('TicketCount', getTicketCount());
-    location.reload();
     var oldTicketCount = await GM.getValue('TicketCount');
+    await GM.setValue('TicketCount', getTicketCount());
     var newTicketCount = getTicketCount();
     if (newTicketCount > oldTicketCount) {
         GM_notification({ title: 'SF neue Tickets', text: `Es sind ${newTicketCount - oldTicketCount} neue Tickets vorhanden`});
-        return;
+    } else if (newTicketCount < oldTicketCount) {
+        GM_notification({ title: 'SF weniger Tickets', text: `Es sind ${oldTicketCount - newTicketCount} weniger Tickets vorhanden`});
     }
 
-    if (newTicketCount < oldTicketCount) {
-        GM_notification({ title: 'SF weniger Tickets', text: `Es sind ${oldTicketCount - newTicketCount} weniger Tickets vorhanden`});
-        // ich weiß dies return ist an sich unötig :D
-        // finde es aber einheitlicher wenns da ist
-        return;
-    }
-}, 20 * 1000);
+    location.reload();
+}, 60 * 1000);
