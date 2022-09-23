@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Salesforce List Auto Update with notification
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.3
 // @updateURL    https://github.com/123erfasst/tampermonkey-scripts/raw/master/salesfoce-auto-update-list-with-notification.user.js
 // @downloadURL  https://github.com/123erfasst/tampermonkey-scripts/raw/master/salesfoce-auto-update-list-with-notification.user.js
 // @description  Automatically update Salesforce lists so tickets are up to date
@@ -19,14 +19,15 @@ function getTicketCount() {
     return select.querySelectorAll('tr').length
 }
 
+var reloadDelaySeconds = await GM.getValue('ReloadDelaySeconds', 30)
+
 setTimeout(async () => {
     if (!window.location.href.includes("https://nevaris.lightning.force.com/lightning/o/Case/list")) {
         return;
     }
-    await GM.setValue('TicketCount', getTicketCount());
-    location.reload();
-    var oldTicketCount = await GM.getValue('TicketCount');
     var newTicketCount = getTicketCount();
+    var oldTicketCount = await GM.getValue('TicketCount');
+    await GM.setValue('TicketCount', newTicketCount);
     if (newTicketCount == oldTicketCount) {
         return;
     }
@@ -36,4 +37,8 @@ setTimeout(async () => {
     } else if (newTicketCount < oldTicketCount) {
         GM_notification({ title: 'SF weniger Tickets', text: `Es sind ${oldTicketCount - newTicketCount} weniger Tickets vorhanden`});
     }
-}, 30 * 1000);
+}, 10 * 1000);
+
+setTimeout(() => {
+    location.reload();
+}, reloadDelaySeconds * 1000);
