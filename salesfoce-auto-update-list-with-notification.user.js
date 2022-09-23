@@ -40,5 +40,8 @@ setTimeout(async () => {
 }, 10 * 1000);
 
 setTimeout(() => {
+    if (!window.location.href.includes("https://nevaris.lightning.force.com/lightning/o/Case/list")) {
+        return;
+    }
     location.reload();
 }, reloadDelaySeconds * 1000);
