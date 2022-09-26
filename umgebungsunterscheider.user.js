@@ -12,8 +12,8 @@
 // @exclude      https://*.qa.123erfasst.de/office*
 // @exclude      http://*.qa.123erfasst.de/office*
 // @grant        GM_addStyle
-// @match        http://*.123erfasst.de/*
-// @match        https://*.123erfasst.de/*
+// @match        http://*/*
+// @match        https://*/*
 // ==/UserScript==
 
 (function() {
