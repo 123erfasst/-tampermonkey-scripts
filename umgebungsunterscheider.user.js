@@ -23,6 +23,7 @@
     const color = safeSites.some(x => window.location.hostname.includes(x)) ? "green" : "red";
     const style = `{ background-color: ${color}!important; }`;
     const selectors = ['#master-sitemap', '#app .wrapper > header', '#app .wrapper ul.navbar-nav'];
+    if (document.querySelector("link[rel='shortcut icon']").href.includes("redesign")) selectors.push('#root>div>header');
     selectors.forEach(x => GM_addStyle(`${x} ${style}`));
     if (window.location.pathname.includes("Mandantenverwaltung.aspx")) {
         const additionalSelectors = ['.dxmMenu_PlasticBlue', '.dxmMenuItem_PlasticBlue', '#master-header'];
