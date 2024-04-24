@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         ERFifier
-// @version      1.3
+// @version      1.4
 // @description  Githubs ERFs werden zum Link
 // @match        https://github.com/123erfasst/123erfasst/pull/*
 // @match        https://github.com/123erfasst/123quality/pull/*
@@ -17,7 +17,7 @@
     const getTitleElement = () => document.querySelector("#partial-discussion-header .markdown-title")
     const getCommentElements = () => document.querySelectorAll(".comment-body")
     const getErf = (el) => (el.innerHTML.match(new RegExp("ERF-[0-9]{1,4}")) || [])[0]
-    const replaceErfWithLink = (el, erf) => el.innerHTML = el.innerHTML.replace(erf, `<a href="https://jira.nevaris.com/browse/${erf}" target="_blank">${erf}</a>`)
+    const replaceErfWithLink = (el, erf) => el.innerHTML = el.innerHTML.replace(erf, `<a href="https://nevaris-gmbh.atlassian.net/browse/${erf}" target="_blank">${erf}</a>`)
     const alreadyContainsLink = (el) => el.innerHTML.indexOf("<a href") !== -1
     const addLinkToElement = (el) => {
         const erf = getErf(el)
