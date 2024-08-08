@@ -16,7 +16,7 @@
     'use strict';
     const getTitleElement = () => document.querySelector("#partial-discussion-header .markdown-title")
     const getCommentElements = () => document.querySelectorAll(".comment-body")
-    const getErf = (el) => (el.innerHTML.match(new RegExp("ERF-[0-9]{1,4}")) || [])[0]
+    const getErf = (el) => (el.innerHTML.match(new RegExp("ERF-[0-9]{1,5}")) || [])[0]
     const replaceErfWithLink = (el, erf) => el.innerHTML = el.innerHTML.replace(erf, `<a href="https://nevaris-gmbh.atlassian.net/browse/${erf}" target="_blank">${erf}</a>`)
     const alreadyContainsLink = (el) => el.innerHTML.indexOf("<a href") !== -1
     const addLinkToElement = (el) => {
