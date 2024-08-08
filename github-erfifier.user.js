@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         ERFifier
-// @version      1.4
+// @version      1.5
 // @description  Githubs ERFs werden zum Link
 // @match        https://github.com/123erfasst/123erfasst/pull/*
 // @match        https://github.com/123erfasst/123quality/pull/*
